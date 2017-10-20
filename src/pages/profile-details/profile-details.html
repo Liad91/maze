@@ -1,0 +1,31 @@
+<!--
+  Generated template for the ProfileDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ user.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-avatar>
+    <img [src]="user.img" [alt]="user.name">
+    <button ion-button round icon-only clear [large]="true" (click)="user.like = !user.like">
+      <ion-icon [name]="user.like ? 'heart' : 'heart-outline'" color="danger"></ion-icon>
+    </button>
+  </ion-avatar>
+
+  <div class="details mt-2">
+    <h6>Description</h6>
+    <p>{{ user.description }}</p>
+    <h6>Hobbies</h6>
+    <p>{{ user.hobbies }}</p>
+    <h6>Favoriets</h6>
+    <div class="favorites flex">
+      <img [src]="'../../assets/imgs/user-' + favorite + '.jpg'" *ngFor="let favorite of user.favorites" (click)="itemTapped(favorite)">
+    </div>
+  </div>
+</ion-content>

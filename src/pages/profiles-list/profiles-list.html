@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profiles</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let user of users" (click)="itemTapped($event, user)">
+      <ion-avatar item-start>
+        <img [src]="user.img" [alt]="user.name">
+      </ion-avatar>
+      <h4>{{ user.name }}</h4>
+      <p>{{user.description}}</p>
+      <div class="flex column h-100" item-end>
+        <button class="align-self-flex-end" ion-button round icon-only clear (click)="sendMessage($event, user.name)">
+          <ion-icon name="mail" color="primary"></ion-icon>
+        </button>
+        <ion-badge class="mt-auto mb-1" [color]="user.online ? 'secondary' : 'danger'">{{ user.online ? 'online' : 'offline' }}</ion-badge>
+      </div>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>

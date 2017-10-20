@@ -4,7 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { ProfilesListPage } from '../pages/profiles-list/profiles-list';
+import { ProfilesGridPage } from '../pages/profiles-grid/profiles-grid';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +15,16 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', icon: 'ios-home-outline', component: HomePage },
+      { title: 'Profiles List', icon: 'ios-list-box-outline', component: ProfilesListPage },
+      { title: 'Profiles Grid', icon: 'ios-grid-outline', component: ProfilesGridPage },
+      { title: 'Profile Details', icon: 'ios-contact-outline', component: ProfilesListPage }
     ];
 
   }

@@ -1,0 +1,38 @@
+// Menu
+//========================================
+.profile-img {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+.status {
+  color: color($colors, primary);
+  margin-top: 5px;
+}
+
+.list-menu {
+  .item-md {
+    border-bottom: 1px solid #1f1f1f;
+
+    &:first-child {
+      border-top: 1px solid #1f1f1f;
+    }
+    
+    ion-icon {
+      color: #bebebe;
+
+      & + .item-inner{
+        margin-left: 10px;
+      }
+    }
+
+    .item-inner {
+      border-bottom: 0;
+      
+      p {
+        color: $text-color;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

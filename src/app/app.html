@@ -1,18 +1,25 @@
-<ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-menu type="push" [content]="content">
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+    <button ion-button round icon-only clear>
+      <ion-icon name="create"></ion-icon>
+    </button>
+    
+    <ion-avatar>
+      <img class="profile-img round w-50 ml-auto mr-auto mt-2" src="../assets/imgs/user-profile.jpg" alt="user">
+    </ion-avatar>
+
+    <h3 class="mb-0" text-center>Ellen Woodward</h3>
+    <p class="status mb-3" text-center>I'm available now</p>
+
+
+    <ion-list class="list-menu">
+      <ion-item menuClose *ngFor="let page of pages" (click)="openPage(page)">
+        <ion-icon [name]="page.icon" item-start></ion-icon>
+        <p>{{page.title}}</p>
+      </ion-item>
+      
     </ion-list>
   </ion-content>
-
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
