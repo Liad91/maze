@@ -1,8 +1,8 @@
 {
   "name": "maze",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "description": "maze demo app",
+  "author": "Liad Idan",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -34,5 +34,12 @@
     "@ionic/app-scripts": "3.0.0",
     "typescript": "2.3.4"
   },
-  "description": "An Ionic project"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liad91/maze.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Liad91/maze/issues"
+  },
+  "homepage": "https://github.com/Liad91/maze#readme"
 }
